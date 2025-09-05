@@ -1,0 +1,43 @@
+
+paths:
+  data_csv: data/customer_support_tickets.csv
+  model_dir: models
+  reports_dir: reports
+
+target:
+  name: Customer Satisfaction Rating
+  task_type: classification  # 'classification' (1-5)
+
+columns:
+  text:
+    - Ticket Description
+    - Ticket Subject
+  categorical:
+    - Customer Gender
+    - Product Purchased
+    - Ticket Type
+    - Ticket Status
+    - Ticket Priority
+    - Ticket Channel
+  datetime:
+    - Date of Purchase
+  numeric:
+    - Customer Age
+
+model:
+  name: random_forest
+  params:
+    n_estimators: 300
+    max_depth: null
+    random_state: 42
+
+preprocessing:
+  impute_strategy_numeric: median
+  impute_strategy_categorical: most_frequent
+  tfidf_max_features: 5000
+  tfidf_ngram_range: [1, 2]
+
+evaluation:
+  test_size: 0.2
+  random_state: 42
+  stratify: true

@@ -1,0 +1,55 @@
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Logs and temp
+logs/
+*.log
+.tmp/
+
+# Models & artifacts
+models/*.pkl
+models/*.bin
+models/*.pt
+models/*.onnx
+models/*.h5
+models/*.sav
+models/*.joblib
+
+# But keep the placeholder
+!models/.gitkeep
+
+# Data — allow CSVs to be committed by default.
+# If your data is huge, consider Git LFS instead.
+data/**/*.parquet
+data/**/*.feather
+data/**/*.arrow
+data/**/*.npy
+data/**/*.npz
+# Explicitly keep CSVs
+!data/**/*.csv
+!data/.gitkeep
+!data/README.md
+
+# Reports/figures (generated)
+reports/figures/
